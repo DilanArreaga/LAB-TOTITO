@@ -1,0 +1,147 @@
+/* ==============================
+   Estilos Globales y de Fondo
+   ============================== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e0e5ec; /* Un gris azulado suave */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #37474f;
+}
+
+/* Contenedor principal del juego */
+.game {
+  display: flex;
+  flex-direction: row;
+  gap: 30px; /* Espacio entre el tablero y el historial */
+  padding: 20px;
+}
+
+/* ==============================
+   Estilos del Tablero y Estado
+   ============================== */
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #1a237e; /* Azul oscuro para el texto de estado */
+  padding: 10px 20px;
+  background: #e0e5ec;
+  border-radius: 10px;
+  /* Sombra suave hacia adentro (neumorfismo) */
+  box-shadow: inset 5px 5px 10px #b8bdc5,
+              inset -5px -5px 10px #ffffff;
+}
+
+/* Contenedor de las filas */
+.board-row {
+  display: flex;
+}
+
+/* ==============================
+   Estilos de los Cuadros (Botones)
+   ============================== */
+.square {
+  background: #e0e5ec;
+  border: none; /* Quitamos el borde clásico */
+  font-size: 3rem; /* Símbolos grandes */
+  font-weight: 800;
+  height: 100px;
+  width: 100px;
+  padding: 0;
+  margin: 10px; /* Espacio entre cuadros */
+  border-radius: 15px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: all 0.2s ease; /* Animación suave al hacer clic */
+  
+  /* Sombra principal (neumorfismo hacia afuera) */
+  box-shadow: 6px 6px 12px #b8bdc5,
+             -6px -6px 12px #ffffff;
+}
+
+/* Colores para la 'X' y la 'O' */
+.square:contains('X') {
+  color: #ff5252; /* Rojo vibrante para X */
+}
+
+.square:contains('O') {
+  color: #448aff; /* Azul vibrante para O */
+}
+
+/* Efecto al pasar el mouse */
+.square:hover {
+  background-color: #f0f3f7;
+}
+
+/* Efecto al hacer clic (se "hunde") */
+.square:active {
+  box-shadow: inset 6px 6px 12px #b8bdc5,
+              inset -6px -6px 12px #ffffff;
+}
+
+/* Quitar el contorno feo al hacer clic */
+.square:focus {
+  outline: none;
+}
+
+/* ==============================
+   Estilos del Historial de Movimientos
+   ============================== */
+.game-info {
+  margin-left: 0;
+  background: #e0e5ec;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 6px 6px 12px #b8bdc5,
+             -6px -6px 12px #ffffff;
+  min-width: 200px;
+}
+
+.game-info ol {
+  padding-left: 10px;
+  list-style-type: none; /* Quitamos los números predeterminados */
+  counter-reset: move-counter; /* Creamos nuestro propio contador */
+}
+
+.game-info li {
+  margin-bottom: 10px;
+  counter-increment: move-counter;
+  display: flex;
+  align-items: center;
+}
+
+/* Creamos números personalizados */
+.game-info li::before {
+  content: counter(move-counter) ".";
+  font-weight: bold;
+  color: #78909c;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* Estilo de los botones del historial */
+.game-info button {
+  background: #f1f3f5;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  color: #546e7a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.game-info button:hover {
+  background: #e2e6ea;
+  border-color: #b0bec5;
+}

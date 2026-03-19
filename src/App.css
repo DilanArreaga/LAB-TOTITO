@@ -1,0 +1,89 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.game-title {
+  font-size: 4rem;
+  color: #1a237e;
+  margin-bottom: 20px;
+  letter-spacing: 8px;
+}
+
+.game-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+/* Panel de Jugadores */
+.players-panel {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px #b8bdc5;
+  min-width: 120px;
+}
+
+.player-card {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.player-card.active {
+  background: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 2px solid #448aff;
+}
+
+.p-label { color: #555; margin-right: 10px; }
+
+/* Ajuste del tablero para que sea un grid */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.status {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* El resto de estilos (square, reset-btn, etc.) se mantienen igual que antes */
+.square {
+  width: 90px;
+  height: 90px;
+  background: #e0e5ec;
+  border: none;
+  border-radius: 15px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 6px 6px 12px #b8bdc5, -6px -6px 12px #ffffff;
+}
+
+.x-text { color: #ff5252; }
+.o-text { color: #448aff; }
+
+.reset-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  background: #448aff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
